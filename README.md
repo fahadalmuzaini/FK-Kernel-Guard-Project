@@ -36,15 +36,16 @@ The repository is organized to maintain a professional, academic, and scalable s
 
 ## 🚀 Quick Start & Usage
 (Instructions and deployment steps will be updated as development progresses through the testing phases).
-
-```bash
+bash
 # Clone the repository
-git clone https://github.com/fahadalmuzaini/FK-Kernel-Guard-Project.git 
+git clone https://github.com/fahadalmuzaini/FK-Kernel-Guard-Project.git
 
 # Navigate to the project directory
 cd FK-Kernel-Guard-Project
+
+
 ---
 
 ## 👨‍💻 Author
-- **Fahad Khwaylid Almuzaini**
+- **Fahad Khuwaylid Almuzaini**
 - **Higher Diploma in Cybersecurity - Gulf Colleges (دبلوم عالي أمن سيبراني - كليات الخليج)**
