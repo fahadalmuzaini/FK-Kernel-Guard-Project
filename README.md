@@ -38,9 +38,9 @@ The repository is organized to maintain a professional, academic, and scalable s
 Instructions and deployment steps for building and running *FK-Kernel Guard*:
 
 ```bash
-# 1. Clone the repository
+# 1. Clone the repository (Click the copy button above to copy this link)
 git clone https://github.com/fahadalmuzaini/FK-Kernel-Guard-Project.git
-
+```
 # 2. Navigate to the project directory
 cd FK-Kernel-Guard-Project
 
@@ -52,7 +52,6 @@ sudo nohup ./kernel_guard > kernel_guard.log 2>&1 &
 
 # 5. Monitoring Live Logs
 tail -f kernel_guard.log
----
 
 ## 👨‍💻 Author
 - **Fahad Khuwaylid Almuzaini**
