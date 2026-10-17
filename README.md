@@ -37,6 +37,7 @@ The repository is organized to maintain a professional, academic, and scalable s
 
 Instructions and deployment steps for building and running *FK-Kernel Guard*:
 
+```bash
 # 1. Clone the repository
 git clone https://github.com/fahadalmuzaini/FK-Kernel-Guard-Project.git
 
@@ -44,15 +45,12 @@ git clone https://github.com/fahadalmuzaini/FK-Kernel-Guard-Project.git
 cd FK-Kernel-Guard-Project
 
 # 3. Standard Execution (Foreground Monitoring)
-To run the tool directly in your terminal and observe live kernel-level behavioral logs:
 sudo ./kernel_guard
 
-# 4. Background Service Execution
-To deploy the tool as a persistent background service (surviving terminal closures) while automatically outputting logs to kernel_guard.log:
+# 4. Background Service Execution (Persistent Background Mode)
 sudo nohup ./kernel_guard > kernel_guard.log 2>&1 &
 
-# 5. Monitoring Logs
-To check the real-time behavioral logs captured by the background service:
+# 5. Monitoring Live Logs
 tail -f kernel_guard.log
 ---
 
