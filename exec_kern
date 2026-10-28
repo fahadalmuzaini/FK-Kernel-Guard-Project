@@ -1,0 +1,41 @@
+#include "vmlinux.h"
+#include <bpf/bpf_helpers.h>
+#include <bpf/bpf_core_read.h>
+
+struct data_t {
+    unsigned int pid;
+    char comm[16];
+    int blocked;
+};
+
+struct {
+    __uint(type, BPF_MAP_TYPE_RINGBUF);
+    __uint(max_entries, 256 * 1024);
+} events SEC(".maps");
+
+// استخدام Tracepoint القياسي المضمون للرصد الفوري
+SEC("tp/syscalls/sys_enter_execve")
+int bpf_prog(void *ctx) {
+    struct data_t *data;
+    char comm[16];
+
+    __builtin_memset(comm, 0, sizeof(comm));
+    bpf_get_current_comm(&comm, sizeof(comm));
+
+    unsigned int pid = bpf_get_current_pid_tgid() >> 32;
+    int is_blocked = 0;
+
+    data = bpf_ringbuf_reserve(&events, sizeof(struct data_t), 0);
+    if (!data)
+        return 0;
+
+    data->pid = pid;
+    __builtin_memcpy(data->comm, comm, sizeof(comm));
+    data->blocked = is_blocked;
+
+    bpf_ringbuf_submit(data, 0);
+
+    return 0;
+}
+
+char LICENSE[] SEC("license") = "GPL";
