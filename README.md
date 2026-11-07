@@ -43,7 +43,7 @@ Instructions and deployment steps for building and running *FK-Kernel Guard*:
 git clone https://github.com/fahadalmuzaini/FK-Kernel-Guard-Project.git
 ```
 # 2. Navigate to the project directory
-cd FK-Kernel-Guard-Project
+cd FK-Kernel-Guard-Project && Make
 
 # 3. Standard Execution (Foreground Monitoring)
 sudo ./kernel_guard
